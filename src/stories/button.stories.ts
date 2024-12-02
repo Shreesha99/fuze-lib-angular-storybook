@@ -14,24 +14,26 @@ export default {
     docs: {
       description: {
         component: `
-          The Button Component is a versatile component that supports various states and styles.
-          
-          Features
-          - Customizable size: \`small\`, \`medium\`, \`large\`
-          - Primary and secondary styling
-          - Disabled state
-          - Supports background color customization via \`backgroundColor\` prop.
-          - Border radius customization via \`borderRadius\` prop.
-          
-          Usage Example
-          <lib-button 
-            [primary]="true"
-            [size]="'large'"
-            [backgroundColor]="'#DC3E4E'"
-            [borderRadius]="'0.5em'"
-            (onClick)="handleClick($event)">
-            Primary Button
-          </lib-button>
+The **Button Component** is a versatile component that supports various states and styles.
+
+### Features
+- **Customizable size**: \`small\`, \`medium\`, \`large\`
+- **Primary and secondary styling**
+- **Disabled state**
+- **Customizable background color** via the \`backgroundColor\` property
+- **Border radius customization** via the \`borderRadius\` property
+
+### Usage Example
+\`\`\`html
+<lib-button 
+  [primary]="true"
+  [size]="'large'"
+  [backgroundColor]="'#DC3E4E'"
+  [borderRadius]="'0.5em'"
+  (onClick)="handleClick($event)">
+  Primary Button
+</lib-button>
+\`\`\`
         `,
       },
     },

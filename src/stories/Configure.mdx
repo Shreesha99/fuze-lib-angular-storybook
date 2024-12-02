@@ -1,0 +1,89 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Introduction" />
+
+<img src="https://videobucket1999.s3.ap-south-1.amazonaws.com/fuzeliblogo.png" alt="FuseLib Logo" width="200" style={{ margin: '20px 0' }} />
+
+# Welcome to FuseLib: Your Angular Component Library
+
+FuseLib is a versatile and robust Angular component library designed to accelerate your development process and enhance the user experience. With a rich set of prebuilt, reusable UI components, FuseLib empowers developers to create consistent, scalable, and visually appealing applications effortlessly.
+
+---
+
+## **What is FuzeLib?**
+
+FuseLib is a modern Angular package created to address the common needs of web developers and designers. It provides essential UI components such as:
+
+- **Button**: Customizable buttons with various styles and actions.
+- **Accordion**: A collapsible container for hierarchical information.
+- **DropdownList**: Feature-rich dropdown menus for data selection.
+- **Avatar**: Represent user identities with avatars.
+- **Breadcrumb**: Navigation aids for a seamless user experience.
+- **Textbox**: Input elements for collecting data.
+
+Each component is crafted with flexibility and performance in mind, ensuring seamless integration and responsiveness across devices.
+
+---
+
+## **Why FuseLib?**
+
+Here’s what makes FuseLib stand out:
+
+### **1. Ease of Use**
+FuseLib components are designed with simplicity at the core. Developers can integrate them into their Angular projects with minimal configuration.
+
+### **2. Highly Customizable**
+Each component offers a wide range of customization options, allowing you to tweak styles, behaviors, and layouts to suit your application needs.
+
+### **3. Performance-Optimized**
+Built with modern Angular practices, FuseLib ensures fast rendering and efficient performance, even in complex projects.
+
+### **4. Comprehensive Documentation**
+FuseLib is well-documented, making it easy for developers to get started and understand each component's capabilities.
+
+---
+
+## **Getting Started**
+
+Follow these steps to integrate FuseLib into your Angular project:
+
+### **Installation**
+Install FuseLib using npm:
+```bash
+npm install fuze-lib-angular
+```
+
+### **Importing Components**
+
+Import the desired component into your Angular module:
+
+```bash
+import { ButtonComponent } from 'fuze-lib-angular';
+
+@NgModule({
+  declarations: [/* Your Components */],
+  imports: [ButtonComponent],
+})
+export class AppModule {}
+
+```
+
+### **Using Components**
+
+Add the component to your template:
+
+```bash
+<lib-button 
+[primary]="true"
+[size]="'large'"
+[backgroundColor]="'#DC3E4E'"
+[borderRadius]="'0.5em'"
+(onClick)="handleClick($event)">
+</lib-button>
+
+```
+### **Stay Connected**
+
+For updates, tutorials, and support, connect with us:
+
+[FuzeMantra](https://www.fuzemantra.com)
