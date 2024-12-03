@@ -341,6 +341,120 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "TextboxComponent",
+            "id": "component-TextboxComponent-9e4ef4b35bb2024fb44e0b1cd1b1acdf17fc5717363793739c46717d006126495f30d0cc9103c630b95d6f008903c15c833c3fea0a5d7fc3b8ead29d86466d73",
+            "file": "src/stories/textbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-textbox",
+            "styleUrls": [
+                "./textbox.css"
+            ],
+            "styles": [],
+            "template": "<input\n  type=\"text\"\n  [placeholder]=\"placeholder\"\n  [value]=\"value\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{\n    'border-radius': borderRadius\n  }\"\n  (input)=\"onInputChange.emit($event)\"\n/>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "borderRadius",
+                    "defaultValue": "'0.5em'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nBorder radius for customization",
+                    "description": "<p>Border radius for customization</p>\n",
+                    "line": 34,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nOptional disabled state",
+                    "description": "<p>Optional disabled state</p>\n",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'Enter text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nPlaceholder text for the textbox",
+                    "description": "<p>Placeholder text for the textbox</p>\n",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nValue of the textbox",
+                    "description": "<p>Value of the textbox</p>\n",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onInputChange",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nEvent emitted when the value changes",
+                    "description": "<p>Event emitted when the value changes</p>\n",
+                    "line": 37,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'lib-textbox',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: `\r\n    <input\r\n      type=\"text\"\r\n      [placeholder]=\"placeholder\"\r\n      [value]=\"value\"\r\n      [disabled]=\"disabled\"\r\n      [ngClass]=\"classes\"\r\n      [ngStyle]=\"{\r\n        'border-radius': borderRadius\r\n      }\"\r\n      (input)=\"onInputChange.emit($event)\"\r\n    />\r\n  `,\r\n  styleUrls: ['./textbox.css'],\r\n})\r\nexport class TextboxComponent {\r\n  /** Placeholder text for the textbox */\r\n  @Input() placeholder = 'Enter text';\r\n\r\n  /** Value of the textbox */\r\n  @Input() value = '';\r\n\r\n  /** Optional disabled state */\r\n  @Input() disabled = false;\r\n\r\n  /** Border radius for customization */\r\n  @Input() borderRadius: string = '0.5em'; // Default rounding\r\n\r\n  /** Event emitted when the value changes */\r\n  @Output() onInputChange = new EventEmitter<Event>();\r\n\r\n  // Dynamically calculate the input classes based on input properties\r\n  public get classes(): string[] {\r\n    return ['textbox'];\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* Textbox container */\r\n.textbox-container {\r\n    position: relative;\r\n    display: inline-block;\r\n    font-family: 'Montserrat', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  }\r\n  \r\n  /* Textbox styles */\r\n  .textbox {\r\n    display: inline-block;\r\n    padding: 10px 20px; /* Consistent padding with button */\r\n    font-size: 16px; /* Matches button font size */\r\n    border: 1px solid #ccc; /* Neutral border color */\r\n    border-radius: var(--textbox-border-radius, 25px); /* Default rounded corners, user-controllable */\r\n    background-color: #ffffff; /* White background */\r\n    color: #333; /* Neutral text color */\r\n    box-sizing: border-box; /* Include padding and border in the width/height */\r\n    transition: border-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */\r\n  }\r\n  \r\n  /* Hover effect */\r\n  .textbox:hover:not(:disabled) {\r\n    transform: scale(1.05); /* Slightly enlarge on hover */\r\n    border-color: #DC3E4E; /* Highlight border on hover */\r\n  }\r\n  \r\n  /* Focused textbox styles */\r\n  .textbox:focus {\r\n    border-color: #DC3E4E; /* Highlighted border on focus */\r\n    box-shadow: 0 0 5px rgba(220, 62, 78, 0.5); /* Subtle glow effect */\r\n    outline: none; /* Removes default outline */\r\n  }\r\n  \r\n  /* Disabled textbox styles */\r\n  .textbox:disabled {\r\n    background-color: #f0f0f0; /* Light gray background */\r\n    color: #a0a0a0; /* Dimmed text color */\r\n    cursor: not-allowed; /* Disabled cursor */\r\n  }\r\n  \r\n  /* Placeholder styling (optional, aligns with design aesthetics) */\r\n  .textbox::placeholder {\r\n    color: #999; /* Placeholder color */\r\n    opacity: 1; /* Ensures consistent appearance */\r\n  }\r\n  ",
+                    "styleUrl": "./textbox.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 40
+                    }
+                }
+            }
         }
     ],
     "modules": [],
@@ -380,7 +494,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 40,
+        "count": 49,
         "status": "medium",
         "files": [
             {
@@ -419,6 +533,15 @@
                 "coveragePercent": 75,
                 "coverageCount": "6/8",
                 "status": "good"
+            },
+            {
+                "filePath": "src/stories/textbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextboxComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
             }
         ]
     }

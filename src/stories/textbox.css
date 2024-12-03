@@ -1,0 +1,46 @@
+/* Textbox container */
+.textbox-container {
+    position: relative;
+    display: inline-block;
+    font-family: 'Montserrat', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  /* Textbox styles */
+  .textbox {
+    display: inline-block;
+    padding: 10px 20px; /* Consistent padding with button */
+    font-size: 16px; /* Matches button font size */
+    border: 1px solid #ccc; /* Neutral border color */
+    border-radius: var(--textbox-border-radius, 25px); /* Default rounded corners, user-controllable */
+    background-color: #ffffff; /* White background */
+    color: #333; /* Neutral text color */
+    box-sizing: border-box; /* Include padding and border in the width/height */
+    transition: border-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  }
+  
+  /* Hover effect */
+  .textbox:hover:not(:disabled) {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    border-color: #DC3E4E; /* Highlight border on hover */
+  }
+  
+  /* Focused textbox styles */
+  .textbox:focus {
+    border-color: #DC3E4E; /* Highlighted border on focus */
+    box-shadow: 0 0 5px rgba(220, 62, 78, 0.5); /* Subtle glow effect */
+    outline: none; /* Removes default outline */
+  }
+  
+  /* Disabled textbox styles */
+  .textbox:disabled {
+    background-color: #f0f0f0; /* Light gray background */
+    color: #a0a0a0; /* Dimmed text color */
+    cursor: not-allowed; /* Disabled cursor */
+  }
+  
+  /* Placeholder styling (optional, aligns with design aesthetics) */
+  .textbox::placeholder {
+    color: #999; /* Placeholder color */
+    opacity: 1; /* Ensures consistent appearance */
+  }
+  
