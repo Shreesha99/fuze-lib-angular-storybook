@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { BreadcrumbComponent } from 'lib-fuze';
+import { BreadcrumbComponent } from './breadcrumb.component';
 
 export default {
   title: 'Library/Breadcrumb',

@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { AvatarComponent } from 'lib-fuze';
+import { AvatarComponent } from './avatar.component';
 
 export default {
   title: 'Library/Avatar',

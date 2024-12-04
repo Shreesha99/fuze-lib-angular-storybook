@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { DropdownListComponent } from 'lib-fuze';
+import { DropdownListComponent } from './dropdown-list.component';
 
 export default {
   title: 'Library/Drop Down List',

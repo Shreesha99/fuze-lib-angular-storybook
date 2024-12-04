@@ -1,0 +1,35 @@
+/* Avatar container */
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Circular shape */
+    overflow: hidden;
+    background-color: #f8f9fa; /* Light background */
+    border: 2px solid #dc3e4e; /* Primary border color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: 'Montserrat', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font */
+  }
+  
+  /* Avatar image styles */
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fits nicely */
+    border-radius: 50%; /* Ensure circular cropping */
+  }
+  
+  /* Avatar placeholder styles */
+  .avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: white; /* Text color */
+    background-color: #dc3e4e; /* Primary background color */
+    font-weight: bold; /* Emphasize text */
+    text-transform: uppercase; /* Capitalize placeholder */
+  }
+  

@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { TextboxComponent } from 'lib-fuze';
+import { TextboxComponent } from './textbox.component';
 
 export default {
   title: 'Library/Textbox',
