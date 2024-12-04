@@ -1,0 +1,47 @@
+/* Accordion Styles */
+.accordion {
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: 'Montserrat', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .accordion-item {
+    transition: all 0.3s ease;
+  }
+  
+  .accordion-header {
+    background-color: #DC3E4E; /* Using the red color from the dropdown */
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    border-radius: 0.5em;
+  }
+  
+  .accordion-header:hover {
+    background-color: #b31c2d; 
+  }
+  
+  .accordion-body {
+    padding: 15px;
+    background-color: #fff;
+    display: none;
+  }
+  
+  .accordion-item.open .accordion-body {
+    display: block;
+  }
+  
+  .accordion-item h5 {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+  
+  .accordion-item.open .accordion-header {
+    background-color: #a81424; /* Using a deeper red color for the open state */
+  }
+  

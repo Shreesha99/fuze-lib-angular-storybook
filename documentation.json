@@ -1,12 +1,216 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "AccordionItem",
+            "id": "interface-AccordionItem-f6833b11d101178748890beb48b473d4b4f3af6c6cc1f687d14fdb2e504af0e3cc920287fa680d13f7a63c673397f044bb5168b2e676211f4a9a63271f6ea875",
+            "file": "src/stories/accordion.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\ninterface AccordionItem {\r\n  title: string;\r\n  content: string;\r\n  isOpen: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'lib-accordion',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: `\r\n    <div class=\"accordion\">\r\n      <div\r\n        *ngFor=\"let item of accordionItems; let i = index\"\r\n        class=\"accordion-item\"\r\n        [class.open]=\"item.isOpen\"\r\n      >\r\n        <div class=\"accordion-header\" (click)=\"toggle(item)\">\r\n          <h5>{{ item.title }}</h5>\r\n        </div>\r\n        <div *ngIf=\"item.isOpen\" class=\"accordion-body\">\r\n          <p>{{ item.content }}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  `,\r\n  styleUrls: ['./accordion.css'],\r\n})\r\nexport class AccordionComponent implements OnChanges {\r\n  /** Number of accordion items */\r\n  @Input() itemCount: number = 3; // Default to 3 items\r\n  @Input() isOpen: boolean = false; // Whether to open each item by default\r\n\r\n  /** Accordion items */\r\n  accordionItems: AccordionItem[] = [];\r\n\r\n  ngOnChanges(changes: SimpleChanges) {\r\n    if (changes['itemCount'] || changes['isOpen']) {\r\n      this.generateAccordionItems();\r\n    }\r\n  }\r\n\r\n  /** Generate items dynamically based on itemCount and isOpen */\r\n  private generateAccordionItems() {\r\n    this.accordionItems = Array.from(\r\n      { length: this.itemCount },\r\n      (_, index) => ({\r\n        title: `Item ${index + 1}`,\r\n        content: `Content for Item ${index + 1}`,\r\n        isOpen: this.isOpen,\r\n      })\r\n    );\r\n  }\r\n\r\n  /** Toggle the visibility of the accordion item */\r\n  toggle(item: AccordionItem) {\r\n    item.isOpen = !item.isOpen;\r\n  }\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "content",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "isOpen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
     "injectables": [],
     "guards": [],
     "interceptors": [],
     "classes": [],
     "directives": [],
     "components": [
+        {
+            "name": "AccordionComponent",
+            "id": "component-AccordionComponent-f6833b11d101178748890beb48b473d4b4f3af6c6cc1f687d14fdb2e504af0e3cc920287fa680d13f7a63c673397f044bb5168b2e676211f4a9a63271f6ea875",
+            "file": "src/stories/accordion.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-accordion",
+            "styleUrls": [
+                "./accordion.css"
+            ],
+            "styles": [],
+            "template": "<div class=\"accordion\">\n  <div\n    *ngFor=\"let item of accordionItems; let i = index\"\n    class=\"accordion-item\"\n    [class.open]=\"item.isOpen\"\n  >\n    <div class=\"accordion-header\" (click)=\"toggle(item)\">\n      <h5>{{ item.title }}</h5>\n    </div>\n    <div *ngIf=\"item.isOpen\" class=\"accordion-body\">\n      <p>{{ item.content }}</p>\n    </div>\n  </div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "isOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "itemCount",
+                    "defaultValue": "3",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nNumber of accordion items",
+                    "description": "<p>Number of accordion items</p>\n",
+                    "line": 34,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "accordionItems",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "AccordionItem[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>Accordion items</p>\n",
+                    "line": 38,
+                    "rawdescription": "\nAccordion items"
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "generateAccordionItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 47,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nGenerate items dynamically based on itemCount and isOpen",
+                    "description": "<p>Generate items dynamically based on itemCount and isOpen</p>\n",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggle",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "AccordionItem",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 59,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nToggle the visibility of the accordion item",
+                    "description": "<p>Toggle the visibility of the accordion item</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "AccordionItem",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\ninterface AccordionItem {\r\n  title: string;\r\n  content: string;\r\n  isOpen: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'lib-accordion',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: `\r\n    <div class=\"accordion\">\r\n      <div\r\n        *ngFor=\"let item of accordionItems; let i = index\"\r\n        class=\"accordion-item\"\r\n        [class.open]=\"item.isOpen\"\r\n      >\r\n        <div class=\"accordion-header\" (click)=\"toggle(item)\">\r\n          <h5>{{ item.title }}</h5>\r\n        </div>\r\n        <div *ngIf=\"item.isOpen\" class=\"accordion-body\">\r\n          <p>{{ item.content }}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  `,\r\n  styleUrls: ['./accordion.css'],\r\n})\r\nexport class AccordionComponent implements OnChanges {\r\n  /** Number of accordion items */\r\n  @Input() itemCount: number = 3; // Default to 3 items\r\n  @Input() isOpen: boolean = false; // Whether to open each item by default\r\n\r\n  /** Accordion items */\r\n  accordionItems: AccordionItem[] = [];\r\n\r\n  ngOnChanges(changes: SimpleChanges) {\r\n    if (changes['itemCount'] || changes['isOpen']) {\r\n      this.generateAccordionItems();\r\n    }\r\n  }\r\n\r\n  /** Generate items dynamically based on itemCount and isOpen */\r\n  private generateAccordionItems() {\r\n    this.accordionItems = Array.from(\r\n      { length: this.itemCount },\r\n      (_, index) => ({\r\n        title: `Item ${index + 1}`,\r\n        content: `Content for Item ${index + 1}`,\r\n        isOpen: this.isOpen,\r\n      })\r\n    );\r\n  }\r\n\r\n  /** Toggle the visibility of the accordion item */\r\n  toggle(item: AccordionItem) {\r\n    item.isOpen = !item.isOpen;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* Accordion Styles */\r\n.accordion {\r\n    border-radius: 5px;\r\n    overflow: hidden;\r\n    font-family: 'Montserrat', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  }\r\n  \r\n  .accordion-item {\r\n    transition: all 0.3s ease;\r\n  }\r\n  \r\n  .accordion-header {\r\n    background-color: #DC3E4E; /* Using the red color from the dropdown */\r\n    padding: 10px;\r\n    cursor: pointer;\r\n    font-weight: 700;\r\n    color: white;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    font-size: 0.7rem;\r\n    border-radius: 0.5em;\r\n  }\r\n  \r\n  .accordion-header:hover {\r\n    background-color: #b31c2d; \r\n  }\r\n  \r\n  .accordion-body {\r\n    padding: 15px;\r\n    background-color: #fff;\r\n    display: none;\r\n  }\r\n  \r\n  .accordion-item.open .accordion-body {\r\n    display: block;\r\n  }\r\n  \r\n  .accordion-item h5 {\r\n    margin: 0;\r\n    font-size: 0.8rem;\r\n  }\r\n  \r\n  .accordion-item.open .accordion-header {\r\n    background-color: #a81424; /* Using a deeper red color for the open state */\r\n  }\r\n  ",
+                    "styleUrl": "./accordion.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnChanges"
+            ]
+        },
         {
             "name": "AppComponent",
             "id": "component-AppComponent-b370de8cd2f217110fab6dfdfe8841f4f43f23baf45a1f459b8d6f2195f17b770b9adf51793cfd3f2593d1cebc23a422e2a12b17c38b10f0adb00d8a7479a071",
@@ -615,7 +819,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 42,
+        "count": 39,
         "status": "medium",
         "files": [
             {
@@ -635,6 +839,24 @@
                 "name": "appConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/accordion.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccordionComponent",
+                "coveragePercent": 57,
+                "coverageCount": "4/7",
+                "status": "good"
+            },
+            {
+                "filePath": "src/stories/accordion.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "AccordionItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
