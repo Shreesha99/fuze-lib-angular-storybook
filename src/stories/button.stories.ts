@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { ButtonComponent } from './button.component';
+import { ButtonComponent } from 'lib-fuze';
 
 export default {
   title: 'Library/Button',
