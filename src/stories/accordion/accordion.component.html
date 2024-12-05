@@ -1,0 +1,36 @@
+<div
+  class="accordion"
+  [style.borderRadius]="accordionBorderRadius"
+  [style.width]="width"
+  [style.height]="accordionHeight"
+  [style.gap]="itemGap"
+>
+  <div
+    *ngFor="let item of accordionItems; let i = index"
+    class="accordion-item"
+    [ngStyle]="{
+      borderRadius: itemBorderRadius,
+      height: itemHeight
+    }"
+  >
+    <div
+      class="accordion-header"
+      [ngStyle]="{
+        backgroundColor: backgroundColor,
+        borderRadius: itemBorderRadius
+      }"
+      (click)="toggle(item)"
+    >
+      <h5>{{ item.title }}</h5>
+      <!-- Arrow Icon -->
+      <span
+        class="arrow"
+        [class.down]="item.isOpen"
+        [class.up]="!item.isOpen"
+      ></span>
+    </div>
+    <div *ngIf="item.isOpen" class="accordion-body">
+      <p>{{ item.content }}</p>
+    </div>
+  </div>
+</div>
