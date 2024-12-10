@@ -1,0 +1,44 @@
+/* Wrapper for Textarea */
+.textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: 'Montserrat', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  /* Textarea Styling */
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #000; /* White text color to match accordion theme */
+    background-color: #DC3E4E; /* Match accordion header background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 5px; /* Match accordion item border radius */
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    resize: vertical; /* Allow vertical resizing only */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  /* Textarea Focus */
+  .textarea:focus {
+    border-color: #DC3E4E; /* Highlight with a blue border */
+    box-shadow: 0 0 5px rgb(220, 62, 78); /* Blue focus glow */
+  }
+  
+  /* Placeholder Text */
+  .textarea::placeholder {
+    color: #000; /* Placeholder color matches text color */
+    opacity: 0.7; /* Slightly faded */
+  }
+  
+  /* Character Count Display */
+  .char-count {
+    font-size: 12px;
+    color: #000; /* Match the accordion header text color */
+    text-align: right;
+  }
+  

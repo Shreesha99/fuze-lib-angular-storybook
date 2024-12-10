@@ -1,0 +1,19 @@
+<div class="textarea-wrapper" [style.width]="width">
+    <textarea
+      class="textarea"
+      [ngStyle]="{
+        backgroundColor: backgroundColor,
+        borderRadius: borderRadius,
+        height: height,
+        textAlign: textAlign,
+        resize: resizable ? 'both' : 'none'
+      }"
+      [placeholder]="placeholder"
+      maxlength="maxLength"
+      (input)="onTextInput($event)"
+    ></textarea>
+    <div *ngIf="showCharCount" class="char-count">
+      {{ textContent.length }}/{{ maxLength }}
+    </div>
+  </div>
+  

@@ -739,6 +739,213 @@
             "extends": []
         },
         {
+            "name": "TextareaComponent",
+            "id": "component-TextareaComponent-80bdb85470256994abcad6011833c699bc63e587511a420052a3a43f1f3dd49dcc0a8b74a79d87a185cdbeaee6b286df3c6ac85eab9d845490305237a4d47c2d",
+            "file": "src/stories/textarea/textarea.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-textarea",
+            "styleUrls": [
+                "textarea.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "textarea.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "defaultValue": "'#ffffff'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "borderRadius",
+                    "defaultValue": "'5px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "height",
+                    "defaultValue": "'100px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "maxLength",
+                    "defaultValue": "500",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'Enter your text here...'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "resizable",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showCharCount",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "textAlign",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "\"left\" | \"center\" | \"right\"",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "defaultValue": "'100%'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "textContent",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nDetect changes in input properties",
+                    "description": "<p>Detect changes in input properties</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onTextInput",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nHandle text input",
+                    "description": "<p>Handle text input</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'lib-textarea',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: 'textarea.component.html',\r\n  styleUrls: ['textarea.component.css'],\r\n})\r\nexport class TextareaComponent implements OnChanges {\r\n  @Input() backgroundColor: string = '#ffffff'; // Default white\r\n  @Input() borderRadius: string = '5px'; // Default 5px\r\n  @Input() width: string = '100%'; // Default 100%\r\n  @Input() height: string = '100px'; // Default 100px\r\n  @Input() placeholder: string = 'Enter your text here...'; // Placeholder text\r\n  @Input() maxLength: number = 500; // Maximum character limit\r\n  @Input() resizable: boolean = true; // Allow resizing\r\n  @Input() textAlign: 'left' | 'center' | 'right' = 'left'; // Text alignment\r\n  @Input() showCharCount: boolean = true; // Show character count\r\n  textContent: string = ''; // User input content\r\n\r\n  /** Detect changes in input properties */\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    if (changes['maxLength'] && this.textContent.length > this.maxLength) {\r\n      this.textContent = this.textContent.substring(0, this.maxLength);\r\n    }\r\n  }\r\n\r\n  /** Handle text input */\r\n  onTextInput(event: Event): void {\r\n    const target = event.target as HTMLTextAreaElement;\r\n    this.textContent = target.value;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* Wrapper for Textarea */\r\n.textarea-wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 5px;\r\n    font-family: 'Montserrat', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  }\r\n  \r\n  /* Textarea Styling */\r\n  .textarea {\r\n    width: 100%;\r\n    padding: 10px;\r\n    font-family: inherit;\r\n    font-size: 14px;\r\n    color: #000; /* White text color to match accordion theme */\r\n    background-color: #DC3E4E; /* Match accordion header background */\r\n    border: 1px solid #ddd; /* Subtle border */\r\n    border-radius: 5px; /* Match accordion item border radius */\r\n    outline: none;\r\n    transition: all 0.3s ease-in-out;\r\n    resize: vertical; /* Allow vertical resizing only */\r\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n    text-align: left;\r\n  }\r\n  \r\n  /* Textarea Focus */\r\n  .textarea:focus {\r\n    border-color: #DC3E4E; /* Highlight with a blue border */\r\n    box-shadow: 0 0 5px rgb(220, 62, 78); /* Blue focus glow */\r\n  }\r\n  \r\n  /* Placeholder Text */\r\n  .textarea::placeholder {\r\n    color: #000; /* Placeholder color matches text color */\r\n    opacity: 0.7; /* Slightly faded */\r\n  }\r\n  \r\n  /* Character Count Display */\r\n  .char-count {\r\n    font-size: 12px;\r\n    color: #000; /* Match the accordion header text color */\r\n    text-align: right;\r\n  }\r\n  ",
+                    "styleUrl": "textarea.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnChanges"
+            ],
+            "templateData": "<div class=\"textarea-wrapper\" [style.width]=\"width\">\r\n    <textarea\r\n      class=\"textarea\"\r\n      [ngStyle]=\"{\r\n        backgroundColor: backgroundColor,\r\n        borderRadius: borderRadius,\r\n        height: height,\r\n        textAlign: textAlign,\r\n        resize: resizable ? 'both' : 'none'\r\n      }\"\r\n      [placeholder]=\"placeholder\"\r\n      maxlength=\"maxLength\"\r\n      (input)=\"onTextInput($event)\"\r\n    ></textarea>\r\n    <div *ngIf=\"showCharCount\" class=\"char-count\">\r\n      {{ textContent.length }}/{{ maxLength }}\r\n    </div>\r\n  </div>\r\n  "
+        },
+        {
             "name": "TextboxComponent",
             "id": "component-TextboxComponent-2c1777f438af05b84783c63fac918d570fb76ab01e16d037f940063dd5de7a0d3b77aa66e5d00c443bce5ab182826159b0719c9f115da4e71169069d3b1931bf",
             "file": "src/stories/textbox/textbox.component.ts",
@@ -879,7 +1086,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 34,
+        "count": 32,
         "status": "medium",
         "files": [
             {
@@ -954,6 +1161,15 @@
                 "coveragePercent": 75,
                 "coverageCount": "6/8",
                 "status": "good"
+            },
+            {
+                "filePath": "src/stories/textarea/textarea.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextareaComponent",
+                "coveragePercent": 15,
+                "coverageCount": "2/13",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/textbox/textbox.component.ts",
