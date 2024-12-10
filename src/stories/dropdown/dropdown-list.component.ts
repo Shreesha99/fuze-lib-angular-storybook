@@ -26,7 +26,7 @@ import { CommonModule } from '@angular/common';
       </ul>
     </div>
   `,
-  styleUrls: ['./dropdownlist.css'],
+  styleUrls: ['dropdownlist.css'],
 })
 export class DropdownListComponent {
   /** List of items to display in the dropdown */

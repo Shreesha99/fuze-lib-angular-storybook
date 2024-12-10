@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { BreadcrumbComponent } from './breadcrumb.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 export default {
   title: 'Library/Breadcrumb',

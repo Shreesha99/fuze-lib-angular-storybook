@@ -328,7 +328,7 @@
         {
             "name": "AvatarComponent",
             "id": "component-AvatarComponent-11d15c5b1380be9b4a9dd965b887a7c6f62db9b4527cc71df5b5f3d28a9d2355d99178a5ae16ea224b0ad447e4e19c87d726ff04aa580c8c1cb3edc9f7c61f86",
-            "file": "src/stories/avatar.component.ts",
+            "file": "src/stories/avatar/avatar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -403,7 +403,7 @@
         {
             "name": "BreadcrumbComponent",
             "id": "component-BreadcrumbComponent-ec02abe544a5d13ce87f3516b02a6ac072e7c2f555b5caa46c1a551a37b79af1350b9f580107f3d67d5e36d2695830bef3e3714d770f8c6431bd79839739f269",
-            "file": "src/stories/breadcrumb.component.ts",
+            "file": "src/stories/breadcrumb/breadcrumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -462,7 +462,7 @@
         {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-3b875e6b97a91aa632102263facf34f45d3e0b539d2515dce65f9a24bcb0bab66fc4a145440a7bb86b8771415b64bcd256aeba506473661c736a001e4c35a7e2",
-            "file": "src/stories/button.component.ts",
+            "file": "src/stories/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -596,8 +596,8 @@
         },
         {
             "name": "DropdownListComponent",
-            "id": "component-DropdownListComponent-239a64fc935dda95698dd75f8e0fedbb4c8c6f174bb1e61d9536f4e9bf26dcf4bab3132d1c273f0e4e6be44d37e547ee90c81eeac656a854eb1d261c7d9fca0b",
-            "file": "src/stories/dropdown-list.component.ts",
+            "id": "component-DropdownListComponent-6ea5994a8f5122d601bf8ad9d69d2a4a0272557a6a59e8588ce0b63b25ba3ae6e23a8f367ece3002605814e246263a39e65c0550728c90301944960e6897cadc",
+            "file": "src/stories/dropdown/dropdown-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -605,7 +605,7 @@
             "providers": [],
             "selector": "lib-dropdown-list",
             "styleUrls": [
-                "./dropdownlist.css"
+                "dropdownlist.css"
             ],
             "styles": [],
             "template": "<div class=\"dropdown\">\n  <button\n    class=\"lib-dropdown\"\n    (click)=\"toggleDropdown()\"\n    [ngClass]=\"{ active: isOpen }\"\n  >\n    {{ selectedItem || placeholder }}\n    <span class=\"caret\"></span>\n  </button>\n  <ul *ngIf=\"isOpen\" class=\"dropdown-menu\">\n    <li\n      *ngFor=\"let item of items\"\n      (click)=\"selectItem(item)\"\n      [ngClass]=\"{ 'dropdown-item': true, selected: item === selectedItem }\"\n    >\n      {{ item }}\n    </li>\n  </ul>\n</div>\n",
@@ -727,12 +727,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'lib-dropdown-list',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: `\r\n    <div class=\"dropdown\">\r\n      <button\r\n        class=\"lib-dropdown\"\r\n        (click)=\"toggleDropdown()\"\r\n        [ngClass]=\"{ active: isOpen }\"\r\n      >\r\n        {{ selectedItem || placeholder }}\r\n        <span class=\"caret\"></span>\r\n      </button>\r\n      <ul *ngIf=\"isOpen\" class=\"dropdown-menu\">\r\n        <li\r\n          *ngFor=\"let item of items\"\r\n          (click)=\"selectItem(item)\"\r\n          [ngClass]=\"{ 'dropdown-item': true, selected: item === selectedItem }\"\r\n        >\r\n          {{ item }}\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  `,\r\n  styleUrls: ['./dropdownlist.css'],\r\n})\r\nexport class DropdownListComponent {\r\n  /** List of items to display in the dropdown */\r\n  @Input() items: string[] = [];\r\n\r\n  /** Selected item */\r\n  @Input() selectedItem: string | null = null;\r\n\r\n  /** Placeholder text when no item is selected */\r\n  @Input() placeholder: string = 'Select an option';\r\n\r\n  /** Emits the selected item */\r\n  @Output() onSelect = new EventEmitter<string>();\r\n\r\n  @Input() isOpen = false;\r\n\r\n  /** Toggle the visibility of the dropdown */\r\n  toggleDropdown() {\r\n    this.isOpen = !this.isOpen;\r\n  }\r\n\r\n  /** Select an item and emit the event */\r\n  selectItem(item: string) {\r\n    this.selectedItem = item;\r\n    this.onSelect.emit(item);\r\n    this.isOpen = false; // Close dropdown after selection\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'lib-dropdown-list',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: `\r\n    <div class=\"dropdown\">\r\n      <button\r\n        class=\"lib-dropdown\"\r\n        (click)=\"toggleDropdown()\"\r\n        [ngClass]=\"{ active: isOpen }\"\r\n      >\r\n        {{ selectedItem || placeholder }}\r\n        <span class=\"caret\"></span>\r\n      </button>\r\n      <ul *ngIf=\"isOpen\" class=\"dropdown-menu\">\r\n        <li\r\n          *ngFor=\"let item of items\"\r\n          (click)=\"selectItem(item)\"\r\n          [ngClass]=\"{ 'dropdown-item': true, selected: item === selectedItem }\"\r\n        >\r\n          {{ item }}\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  `,\r\n  styleUrls: ['dropdownlist.css'],\r\n})\r\nexport class DropdownListComponent {\r\n  /** List of items to display in the dropdown */\r\n  @Input() items: string[] = [];\r\n\r\n  /** Selected item */\r\n  @Input() selectedItem: string | null = null;\r\n\r\n  /** Placeholder text when no item is selected */\r\n  @Input() placeholder: string = 'Select an option';\r\n\r\n  /** Emits the selected item */\r\n  @Output() onSelect = new EventEmitter<string>();\r\n\r\n  @Input() isOpen = false;\r\n\r\n  /** Toggle the visibility of the dropdown */\r\n  toggleDropdown() {\r\n    this.isOpen = !this.isOpen;\r\n  }\r\n\r\n  /** Select an item and emit the event */\r\n  selectItem(item: string) {\r\n    this.selectedItem = item;\r\n    this.onSelect.emit(item);\r\n    this.isOpen = false; // Close dropdown after selection\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "/* Dropdown container */\r\n.dropdown {\r\n  position: relative;\r\n  display: inline-block;\r\n}\r\n\r\n/* Button styles */\r\n.lib-dropdown {\r\n  font-family: 'Montserrat', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  width: 200px;\r\n  padding: 10px 12px;\r\n  background-color: #dc3e4e;\r\n  color: white;\r\n  border: none;\r\n  cursor: pointer;\r\n  border-radius: 0.5em;\r\n  font-size: 14px;\r\n  font-weight: 700;\r\n  text-align: left;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.lib-dropdown.active {\r\n  background-color: #b31c2d;\r\n}\r\n\r\n.lib-dropdown:hover {\r\n  background-color: #a81424;\r\n}\r\n\r\n/* Caret icon */\r\n.caret {\r\n  margin-left: auto;\r\n  border: 6px solid transparent;\r\n  border-top-color: white;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n}\r\n\r\n/* Dropdown menu styles */\r\n.dropdown-menu {\r\n  position: absolute;\r\n  top: calc(100% + 5px);\r\n  left: 0;\r\n  background-color: white;\r\n  border: 1px solid #ddd;\r\n  border-radius: 0.5em;\r\n  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);\r\n  list-style: none;\r\n  margin: 0;\r\n  padding: 5px 0;\r\n  z-index: 1;\r\n  width: 100%;\r\n}\r\n\r\n/* Dropdown item styles */\r\n.dropdown-item {\r\n  padding: 10px 12px;\r\n  font-size: 14px;\r\n  color: #333;\r\n  cursor: pointer;\r\n}\r\n\r\n.dropdown-item:hover {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.dropdown-item.selected {\r\n  background-color: #dc3e4e;\r\n  color: white;\r\n  font-weight: bold;\r\n}\r\n",
-                    "styleUrl": "./dropdownlist.css"
+                    "styleUrl": "dropdownlist.css"
                 }
             ],
             "stylesData": "",
@@ -741,7 +741,7 @@
         {
             "name": "TextboxComponent",
             "id": "component-TextboxComponent-2c1777f438af05b84783c63fac918d570fb76ab01e16d037f940063dd5de7a0d3b77aa66e5d00c443bce5ab182826159b0719c9f115da4e71169069d3b1931bf",
-            "file": "src/stories/textbox.component.ts",
+            "file": "src/stories/textbox/textbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -920,7 +920,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/avatar.component.ts",
+                "filePath": "src/stories/avatar/avatar.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AvatarComponent",
@@ -929,7 +929,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/breadcrumb.component.ts",
+                "filePath": "src/stories/breadcrumb/breadcrumb.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "BreadcrumbComponent",
@@ -938,7 +938,7 @@
                 "status": "medium"
             },
             {
-                "filePath": "src/stories/button.component.ts",
+                "filePath": "src/stories/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
@@ -947,7 +947,7 @@
                 "status": "very-good"
             },
             {
-                "filePath": "src/stories/dropdown-list.component.ts",
+                "filePath": "src/stories/dropdown/dropdown-list.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "DropdownListComponent",
@@ -956,7 +956,7 @@
                 "status": "good"
             },
             {
-                "filePath": "src/stories/textbox.component.ts",
+                "filePath": "src/stories/textbox/textbox.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TextboxComponent",

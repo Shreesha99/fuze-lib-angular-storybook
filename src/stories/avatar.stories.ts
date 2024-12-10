@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { AvatarComponent } from './avatar.component';
+import { AvatarComponent } from './avatar/avatar.component';
 
 export default {
   title: 'Library/Avatar',
